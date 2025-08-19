@@ -24,6 +24,8 @@ const buttonVariants = cva(
         success: "bg-gradient-to-r from-indian-green to-indian-green-light text-white hover:from-indian-green-dark hover:to-indian-green shadow-lg hover:shadow-xl transition-all duration-300",
         "outline-saffron": "border-2 border-saffron text-saffron hover:bg-saffron hover:text-white transition-all duration-300",
         "outline-green": "border-2 border-indian-green text-indian-green hover:bg-indian-green hover:text-white transition-all duration-300",
+        premium: "bg-gradient-to-r from-secondary to-secondary-light text-white hover:from-secondary-dark hover:to-secondary shadow-lg hover:shadow-xl transition-all duration-300",
+        accent: "bg-gradient-to-r from-accent to-accent-light text-white hover:from-accent-dark hover:to-accent shadow-md hover:shadow-lg transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
