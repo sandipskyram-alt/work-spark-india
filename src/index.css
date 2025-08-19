@@ -1,24 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* WorkSpark India Design System - Saffron, Green, White theme */
 
 @layer base {
   :root {
+    /* Base colors */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+
+    /* Indian theme colors */
+    --saffron: 28 100% 60%;
+    --saffron-light: 28 100% 70%;
+    --saffron-dark: 28 100% 50%;
+    --indian-green: 120 70% 25%;
+    --indian-green-light: 120 60% 35%;
+    --indian-green-dark: 120 80% 20%;
+    
+    /* Design system semantic tokens */
+    --primary: 28 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 28 100% 70%;
+    
+    --success: 120 70% 25%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 120 60% 35%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--saffron)), hsl(var(--saffron-light)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--indian-green)), hsl(var(--indian-green-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--saffron) / 0.1), hsl(var(--indian-green) / 0.1));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--saffron) / 0.3);
+    --shadow-card: 0 4px 20px -8px hsl(var(--foreground) / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--saffron-light) / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -100,6 +128,22 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
   }
+  
+  /* Custom components */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .card-hover {
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elegant);
+  }
+}
 }

@@ -18,15 +18,37 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				inter: ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				// Indian theme colors
+				saffron: {
+					DEFAULT: 'hsl(var(--saffron))',
+					light: 'hsl(var(--saffron-light))',
+					dark: 'hsl(var(--saffron-dark))',
+				},
+				'indian-green': {
+					DEFAULT: 'hsl(var(--indian-green))',
+					light: 'hsl(var(--indian-green-light))',
+					dark: 'hsl(var(--indian-green-dark))',
+				},
+				
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))',
+					light: 'hsl(var(--success-light))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',

@@ -18,6 +18,12 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        
+        // WorkSpark India variants
+        hero: "bg-gradient-to-r from-saffron to-saffron-light text-white hover:from-saffron-dark hover:to-saffron shadow-lg hover:shadow-xl transition-all duration-300",
+        success: "bg-gradient-to-r from-indian-green to-indian-green-light text-white hover:from-indian-green-dark hover:to-indian-green shadow-lg hover:shadow-xl transition-all duration-300",
+        "outline-saffron": "border-2 border-saffron text-saffron hover:bg-saffron hover:text-white transition-all duration-300",
+        "outline-green": "border-2 border-indian-green text-indian-green hover:bg-indian-green hover:text-white transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
