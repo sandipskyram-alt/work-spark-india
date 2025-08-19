@@ -16,9 +16,9 @@ const HowItWorks = () => {
     },
     {
       icon: <Users className="h-8 w-8" />,
-      title: "Choose Talent",
+      title: "Choose Freelancer",
       description: "Browse Aadhaar-verified profiles",
-      detail: "Review portfolios of verified talents from across India. Each profile shows skills, ratings, and location-specific expertise."
+      detail: "Review portfolios of verified freelancers from across India. Each profile shows skills, ratings, and location-specific expertise."
     },
     {
       icon: <CreditCard className="h-8 w-8" />,

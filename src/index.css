@@ -20,15 +20,6 @@
     --indian-green-light: 120 60% 35%;
     --indian-green-dark: 120 80% 20%;
     
-    /* Secondary colors for premium design */
-    --accent: 240 5% 64%;
-    --accent-light: 240 5% 74%;
-    --accent-dark: 240 5% 54%;
-    
-    --secondary: 215 28% 17%;
-    --secondary-light: 215 28% 27%;
-    --secondary-dark: 215 28% 12%;
-    
     /* Design system semantic tokens */
     --primary: 28 100% 60%;
     --primary-foreground: 0 0% 100%;

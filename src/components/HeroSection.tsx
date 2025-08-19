@@ -18,7 +18,7 @@ const HeroSection = () => {
                 Build the Future
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Connect with verified talents across India. From digital marketing to software development - find skilled professionals who understand your local market.
+                Connect with verified freelancers across India. From digital marketing to software development - find skilled professionals who understand your local market.
               </p>
             </div>
 
@@ -84,7 +84,7 @@ const HeroSection = () => {
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-saffron">50K+</div>
-                  <div className="text-sm text-gray-600">Verified Talents</div>
+                  <div className="text-sm text-gray-600">Verified Freelancers</div>
                 </div>
               </div>
               <div className="absolute -top-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
