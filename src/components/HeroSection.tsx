@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+// import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
   return (
@@ -71,11 +71,15 @@ const HeroSection = () => {
           {/* Right Image */}
           <div className="lg:block">
             <div className="relative">
-              <img
-                src={heroImage}
-                alt="Indian professionals working together"
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
-              />
+              <div
+                className="rounded-2xl shadow-2xl w-full h-[500px] bg-gradient-to-br from-saffron/20 to-indian-green/20 flex items-center justify-center"
+              >
+                <div className="text-center p-8">
+                  <div className="text-6xl mb-4">🇮🇳</div>
+                  <div className="text-2xl font-bold text-gray-700">Indian Talent</div>
+                  <div className="text-gray-600">Working Together</div>
+                </div>
+              </div>
               {/* Floating Stats */}
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                 <div className="text-center">

@@ -1,43 +1,43 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import digitalMarketingIcon from "@/assets/digital-marketing-icon.jpg";
-import webDevelopmentIcon from "@/assets/web-development-icon.jpg";
-import contentWritingIcon from "@/assets/content-writing-icon.jpg";
+// import digitalMarketingIcon from "@/assets/digital-marketing-icon.jpg";
+// import webDevelopmentIcon from "@/assets/web-development-icon.jpg";
+// import contentWritingIcon from "@/assets/content-writing-icon.jpg";
 
 const categories = [
   {
     title: "Digital Marketing",
-    icon: digitalMarketingIcon,
+    icon: "📱",
     description: "SEO, Social Media, PPC, Content Marketing",
     jobs: "2,500+ jobs",
   },
   {
     title: "Web Development",
-    icon: webDevelopmentIcon,
+    icon: "💻",
     description: "React, Node.js, WordPress, E-commerce",
     jobs: "1,800+ jobs",
   },
   {
     title: "Content Writing",
-    icon: contentWritingIcon,
+    icon: "✍️",
     description: "Blog Writing, Copywriting, Technical Writing",
     jobs: "3,200+ jobs",
   },
   {
     title: "Mobile App Development",
-    icon: webDevelopmentIcon,
+    icon: "📱",
     description: "iOS, Android, React Native, Flutter",
     jobs: "1,200+ jobs",
   },
   {
     title: "Graphic Design",
-    icon: digitalMarketingIcon,
+    icon: "🎨",
     description: "Logo Design, UI/UX, Brand Identity",
     jobs: "2,100+ jobs",
   },
   {
     title: "Video Production",
-    icon: contentWritingIcon,
+    icon: "🎬",
     description: "Video Editing, Animation, Production",
     jobs: "950+ jobs",
   },
@@ -64,12 +64,8 @@ const JobCategories = () => {
             >
               <CardContent className="p-8">
                 <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <img
-                      src={category.icon}
-                      alt={category.title}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-saffron/20 to-indian-green/20 flex-shrink-0 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center text-2xl">
+                    {category.icon}
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-saffron transition-colors">
