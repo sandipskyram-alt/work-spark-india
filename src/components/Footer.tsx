@@ -105,7 +105,7 @@ const Footer = () => {
               <span className="mr-2">Trusted by</span>
               <div className="flex items-center space-x-1">
                 <span className="text-saffron font-semibold">50K+</span>
-                <span>Indian freelancers</span>
+                <span>Indian talents</span>
               </div>
             </div>
           </div>
