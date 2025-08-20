@@ -1,9 +1,40 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useAuth } from "@/hooks/useAuth";
 import { Search } from "lucide-react";
-// import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+  const { user, profile } = useAuth();
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      navigate(`/jobs?search=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      navigate('/jobs');
+    }
+  };
+
+  const handleFindTalent = () => {
+    navigate('/jobs');
+  };
+
+  const handlePostJob = () => {
+    if (!user) {
+      navigate('/auth');
+      return;
+    }
+    
+    if (profile?.user_type !== 'buyer') {
+      navigate('/auth');
+      return;
+    }
+    
+    navigate('/post-job');
+  };
   return (
     <section className="relative min-h-[70vh] flex items-center hero-gradient">
       <div className="container mx-auto px-4 py-20">
@@ -40,10 +71,10 @@ const HeroSection = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="text-lg px-8 py-6">
+              <Button variant="hero" size="lg" className="text-lg px-8 py-6" onClick={handleFindTalent}>
                 Find Indian Talent
               </Button>
-              <Button variant="outline-green" size="lg" className="text-lg px-8 py-6">
+              <Button variant="outline-green" size="lg" className="text-lg px-8 py-6" onClick={handlePostJob}>
                 Post Your Job
               </Button>
             </div>
@@ -56,11 +87,15 @@ const HeroSection = () => {
                   type="text"
                   placeholder="Try 'digital marketing', 'website design', 'content writing'..."
                   className="pr-12 py-3 text-lg border-2 border-gray-200 focus:border-saffron"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
                 />
                 <Button 
                   variant="hero" 
                   size="sm" 
                   className="absolute right-2 top-1/2 transform -translate-y-1/2"
+                  onClick={handleSearch}
                 >
                   <Search className="h-4 w-4" />
                 </Button>

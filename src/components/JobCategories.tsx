@@ -85,7 +85,7 @@ const JobCategories = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline-saffron" size="lg">
+          <Button variant="outline-saffron" size="lg" onClick={() => window.location.href = '/jobs'}>
             View All Categories
           </Button>
         </div>
