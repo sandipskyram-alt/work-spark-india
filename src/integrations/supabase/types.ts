@@ -14,7 +14,340 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      job_categories: {
+        Row: {
+          created_at: string
+          description: string | null
+          icon_url: string | null
+          id: string
+          is_active: boolean | null
+          name: string
+          parent_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          icon_url?: string | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          parent_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          icon_url?: string | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          parent_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "job_categories_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "job_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      job_proposals: {
+        Row: {
+          attachments: Json | null
+          cover_letter: string
+          id: string
+          job_id: string
+          milestones: Json | null
+          proposed_budget: number
+          proposed_duration: string | null
+          status: string | null
+          submitted_at: string
+          talent_id: string
+          updated_at: string
+        }
+        Insert: {
+          attachments?: Json | null
+          cover_letter: string
+          id?: string
+          job_id: string
+          milestones?: Json | null
+          proposed_budget: number
+          proposed_duration?: string | null
+          status?: string | null
+          submitted_at?: string
+          talent_id: string
+          updated_at?: string
+        }
+        Update: {
+          attachments?: Json | null
+          cover_letter?: string
+          id?: string
+          job_id?: string
+          milestones?: Json | null
+          proposed_budget?: number
+          proposed_duration?: string | null
+          status?: string | null
+          submitted_at?: string
+          talent_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "job_proposals_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "jobs"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "job_proposals_talent_id_fkey"
+            columns: ["talent_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      jobs: {
+        Row: {
+          applications_count: number | null
+          attachments: Json | null
+          budget_max: number | null
+          budget_min: number | null
+          budget_type: string
+          category_id: string
+          created_at: string
+          currency: string | null
+          description: string
+          duration: string | null
+          experience_level: string | null
+          expires_at: string | null
+          id: string
+          is_featured: boolean | null
+          is_remote: boolean | null
+          location_preference: string | null
+          poster_id: string
+          screening_questions: Json | null
+          skills_required: Json | null
+          status: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          applications_count?: number | null
+          attachments?: Json | null
+          budget_max?: number | null
+          budget_min?: number | null
+          budget_type: string
+          category_id: string
+          created_at?: string
+          currency?: string | null
+          description: string
+          duration?: string | null
+          experience_level?: string | null
+          expires_at?: string | null
+          id?: string
+          is_featured?: boolean | null
+          is_remote?: boolean | null
+          location_preference?: string | null
+          poster_id: string
+          screening_questions?: Json | null
+          skills_required?: Json | null
+          status?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          applications_count?: number | null
+          attachments?: Json | null
+          budget_max?: number | null
+          budget_min?: number | null
+          budget_type?: string
+          category_id?: string
+          created_at?: string
+          currency?: string | null
+          description?: string
+          duration?: string | null
+          experience_level?: string | null
+          expires_at?: string | null
+          id?: string
+          is_featured?: boolean | null
+          is_remote?: boolean | null
+          location_preference?: string | null
+          poster_id?: string
+          screening_questions?: Json | null
+          skills_required?: Json | null
+          status?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "jobs_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "job_categories"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "jobs_poster_id_fkey"
+            columns: ["poster_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          company_name: string | null
+          created_at: string
+          email: string
+          full_name: string | null
+          id: string
+          is_verified: boolean | null
+          kyc_documents: Json | null
+          kyc_status: string | null
+          location: string | null
+          membership_plan: string | null
+          phone: string | null
+          updated_at: string
+          user_id: string
+          user_type: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          company_name?: string | null
+          created_at?: string
+          email: string
+          full_name?: string | null
+          id?: string
+          is_verified?: boolean | null
+          kyc_documents?: Json | null
+          kyc_status?: string | null
+          location?: string | null
+          membership_plan?: string | null
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+          user_type: string
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          company_name?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string | null
+          id?: string
+          is_verified?: boolean | null
+          kyc_documents?: Json | null
+          kyc_status?: string | null
+          location?: string | null
+          membership_plan?: string | null
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+          user_type?: string
+        }
+        Relationships: []
+      }
+      skills: {
+        Row: {
+          category: string
+          created_at: string
+          id: string
+          name: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          id?: string
+          name: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      talent_profiles: {
+        Row: {
+          availability: string | null
+          badges: Json | null
+          certifications: Json | null
+          created_at: string
+          experience_level: string | null
+          headline: string | null
+          hourly_rate: number | null
+          id: string
+          languages: Json | null
+          portfolio_url: string | null
+          profile_id: string
+          rating: number | null
+          skills: Json | null
+          success_rate: number | null
+          total_earnings: number | null
+          total_jobs: number | null
+          updated_at: string
+          work_history: Json | null
+        }
+        Insert: {
+          availability?: string | null
+          badges?: Json | null
+          certifications?: Json | null
+          created_at?: string
+          experience_level?: string | null
+          headline?: string | null
+          hourly_rate?: number | null
+          id?: string
+          languages?: Json | null
+          portfolio_url?: string | null
+          profile_id: string
+          rating?: number | null
+          skills?: Json | null
+          success_rate?: number | null
+          total_earnings?: number | null
+          total_jobs?: number | null
+          updated_at?: string
+          work_history?: Json | null
+        }
+        Update: {
+          availability?: string | null
+          badges?: Json | null
+          certifications?: Json | null
+          created_at?: string
+          experience_level?: string | null
+          headline?: string | null
+          hourly_rate?: number | null
+          id?: string
+          languages?: Json | null
+          portfolio_url?: string | null
+          profile_id?: string
+          rating?: number | null
+          skills?: Json | null
+          success_rate?: number | null
+          total_earnings?: number | null
+          total_jobs?: number | null
+          updated_at?: string
+          work_history?: Json | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "talent_profiles_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
